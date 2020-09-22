@@ -1,0 +1,40 @@
+<div class="w-60">
+    <div class="d-flex fy-center">
+        <button mat-icon-button color="primary" aria-label="">
+            <mat-icon routerLink="/home">keyboard_arrow_left</mat-icon>
+        </button>
+        <h3 class="subtitle">Nuevo cliente</h3>
+    </div>
+    
+    <form [formGroup]="formClient" class="fx-column">
+        <mat-form-field appearance="fill" class="form-control-w">
+            <mat-label>Nombre *</mat-label>
+            <input matInput formControlName="name">
+            <mat-error>
+                Debe ingresar nombre
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-control-w">
+            <mat-label>Apellido *</mat-label>
+            <input matInput formControlName="lastname">
+            <mat-error>
+                Debe ingresar apellido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-control-w">
+            <mat-label>Fecha de nacimiento *</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthday" [max]="nowDate" (dateChange)="calculateAge()">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error>Debe ingresar una fecha válida</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form-control-w">
+            <mat-label>Edad</mat-label>
+            <input matInput formControlName="age">
+        </mat-form-field>
+        <div class="fx-between">
+            <button mat-raised-button color="basic" (click)="clearForm()">Limpiar</button>
+            <button mat-raised-button color="primary" (click)="saveClient()">Guardar</button>
+        </div>
+    </form>
+</div>

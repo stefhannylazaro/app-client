@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.width-general {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.subtitle {
+    font-weight: 500;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.w-60{
+    width: 60%;
+}
+.d-flex {
+    display: flex;
+}
+.fx-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.fx-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fy-center {
+    align-items: center;
+}
+
+.mb-12{
+    margin-bottom: 12px;
+}
+
+.mb-36 {
+    margin-bottom: 36px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .width-general {
+        max-width: 100%;
+    }
+}
